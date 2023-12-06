@@ -7,7 +7,7 @@ OUTPUT_FORMAT("elf64-bigaarch64", "elf64-bigaarch64",
 	      "elf64-littleaarch64")
 OUTPUT_ARCH(aarch64)
 ENTRY(_start)
-SEARCH_DIR("/home/arnd/cross/x86_64/gcc-13.1.0-nolibc/aarch64-linux/aarch64-linux/lib64"); SEARCH_DIR("/home/arnd/cross/x86_64/gcc-13.1.0-nolibc/aarch64-linux/aarch64-linux/lib");
+SEARCH_DIR("/home/arnd/cross/x86_64/gcc-13.2.0-nolibc/aarch64-linux/aarch64-linux/lib64"); SEARCH_DIR("/home/arnd/cross/x86_64/gcc-13.2.0-nolibc/aarch64-linux/aarch64-linux/lib");
 SECTIONS
 {
   /* Read-only sections, merged into text segment: */
@@ -183,7 +183,7 @@ SECTIONS
   .stab.exclstr  0 : { *(.stab.exclstr) }
   .stab.index    0 : { *(.stab.index) }
   .stab.indexstr 0 : { *(.stab.indexstr) }
-  .comment       0 : { *(.comment) }
+  .comment 0 (INFO) : { *(.comment); LINKER_VERSION; }
   .gnu.build.attributes : { *(.gnu.build.attributes .gnu.build.attributes.*) }
   /* DWARF debug sections.
      Symbols in the DWARF debugging sections are relative to the beginning
